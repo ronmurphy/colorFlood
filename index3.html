@@ -292,6 +292,30 @@
         #startButton:hover {
             background-color: #45a049;
         }
+
+        @keyframes levelTransition {
+    0% { transform: scale(1) rotate(0deg); opacity: 1; }
+    50% { transform: scale(0.8) rotate(180deg); opacity: 0.5; }
+    100% { transform: scale(1) rotate(360deg); opacity: 1; }
+}
+
+@keyframes particleBurst {
+    0% { transform: translate(0, 0) scale(1); opacity: 1; }
+    100% { transform: translate(var(--x), var(--y)) scale(0); opacity: 0; }
+}
+
+.completion-particle {
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 1000;
+}
+
+.grid-transition {
+    animation: levelTransition 0.8s ease-in-out;
+}
     </style>
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><style>
                         body, html {
